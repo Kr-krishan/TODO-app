@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>TODO App</title>
+
+	<!-- google font link -->
+	<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;500;700&display=swap" rel="stylesheet">
+
+	<!-- font awesome cdn css link -->
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+
+	<!-- personal css link -->
+	<link rel="stylesheet" type="text/css" href="./css/todos.css">
+
+	<!-- jquery link -->
+	<script type="text/javascript" src="./js/lib/jquery-3.5.0.min.js"></script>
+</head>
+<body>
+	<div id="main-container">
+		<h1>TODO APP</h1>
+		<form id="container">
+
+			<!-- task form to add task -->
+			<div class="task-form-container">
+				<div id="task-description">
+					<label for="task">Description</label>
+					<input type="text" id="task" class="color-gray" name="task" placeholder="what do you need to do?"  >
+				</div>
+
+				<!-- details of task to be added -->
+				<div id="task-details">
+					<div class="task-category">
+						<label for="category">Category</label>
+						<select name="category" id="category">
+						    <option value="">please choose a category</option>
+						    <option value="personal">personal</option>
+						    <option value="school">school</option>
+						    <option value="work">work</option>
+						    <option value="cleaning">cleaning</option>
+						    <option value="other">other</option>
+						</select>
+					</div>
+					<div class="task-date">
+						<label for="date">Due Date</label>
+						<input type="date" name="date" id="date" class="color-gray" min="2020-06-10" >		
+					</div>
+				</div>
+			</div>
+
+			<!-- buttons to add or delete task -->
+			<div class="button-container">
+				<button id="add-button" formaction="/new-task" formmethod="POST">
+					<i class="fas fa-plus"></i> Add Task
+				</button>
+				<button id="delete-button" formaction="/delete-task" formmethod="GET">
+					<i class="fas fa-trash-alt"></i> Delete Task
+				</button>
+			</div>
+
+			<!-- show task-list to do -->
+			<ul class="task-list-container">
+				<% for(let i of task_List){  %>
+					<li>
+						<input type="checkbox" name="id" value= <%= i.id %> >
+						<span>
+							<p class="font-task-head"><%= i.task %></p>
+							<p class="font-task-date"><i class="fas fa-calendar-alt"></i> <%= i.date.toDateString().slice(3,20) %></p>
+						</span>
+						<div class="show-category">
+							<%= i.category %>
+						</div>
+					</li>
+				<%}  %>
+			</ul>
+		</form>
+	</div>
+
+<!-- connecting js file -->
+<script type="text/javascript" src="./js/todos.js"></script>
+</body>
+</html>

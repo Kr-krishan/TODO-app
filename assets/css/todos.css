@@ -1,0 +1,158 @@
+body{
+	font-family: 'Roboto Slab', serif;
+	background: #F1F2B5;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #135058, #F1F2B5);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #135058, #F1F2B5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+*{
+	margin: 0;
+	padding: 0;
+}
+/*main-container of our app*/
+#main-container{
+	width: 50%;
+	margin:50px auto;
+	background-color: white;
+	border:1px solid teal;
+}
+
+/* heading */
+h1{
+	text-align: center;
+	padding: 10px 0;
+	background-color: #1f9191;
+	color: white;
+}
+
+
+/* task-form-container*/
+.task-form-container label{
+	display: block;
+	text-transform: uppercase;
+	font-size: 12px;
+}
+.task-form-container input,select{
+	border: none;
+	background-color: white;
+	width: inherit;
+	padding: 4px 0;
+	outline: none;
+}
+
+
+/* task-description */
+#task-description{
+	border-top: 1px solid lightgray;
+	padding: 10px ;
+}
+#task-description input{
+	width: 100%;
+	padding: 4px 2px;
+}
+#task-description input:focus{
+	outline: none;
+}
+
+
+/* task details */
+#task-details{
+	display: flex;
+	justify-content: space-between;
+	border-top: 1px solid lightgray;
+	border-bottom: 1px solid lightgray;
+}
+
+#task-details>div{
+	width: 100%;
+	padding: 4px 0 10px 10px;
+}
+.task-category{
+	border-right: 1px solid lightgray;
+}
+.task-category label{
+	padding-left: 4px;
+}
+.task-category #category{
+	color:#777761;
+}
+.task-date input[type="date"]{
+	color:#777761;
+}
+
+/*  button-container */
+.button-container{
+	display: flex;
+	justify-content: center;
+	padding: 10px 0;
+}
+.button-container button{
+	margin: 5px;
+	color: white;
+	border:none;
+	font-size: 1rem;
+	display: flex;
+	justify-content: space-around;
+	text-transform: uppercase;
+	padding: 10px 15px;
+	font-weight: bold;
+}
+.button-container button i{
+	margin-right: 5px;
+}
+/* add button  */
+#add-button{
+	background-color: teal;
+}
+#add-button i{
+	margin-right: 10px;
+}
+
+/* delete button  */
+#delete-button{
+	background-color: #ca1d1d;
+}
+
+/* task list container*/
+.task-list-container li{
+	list-style: none;
+	display: flex;
+	justify-content: space-between;
+	padding: 10px;
+	border-top: 1px solid lightgray;
+}
+.task-list-container li:nth-child(2n){
+	background-color: #d0e6e6;
+}
+.task-list-container li input{
+	outline: none;
+}
+.task-list-container li span{
+	flex-grow: 1;
+	margin: 0 10px;
+	margin-top: -10px;
+}
+
+.task-list-container li div{
+	width: 80px;
+	height: 30px;
+	text-align: center;
+	line-height: 30px;
+}
+
+/* common font */
+.font-task-head{
+	font-size: 20px;
+}
+.font-task-date{
+	font-size: 12px;
+	font-weight: lighter;
+	color: #777761;
+	margin: 2px;
+}
+
+/* mark-off completed task */
+.completed{
+	text-decoration: line-through;
+	color: #666;
+}
